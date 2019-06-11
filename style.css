@@ -1,0 +1,278 @@
+@font-face {
+ font-family: "Evolve-Med";
+ src: url("polices/Evolve/test.otf");
+}
+
+@font-face {
+ font-family: "Evolve-gros";
+ src: url("polices/Evolve/Evolve_test.otf");
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("images/back6.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.conteneur {
+	height: 70px;
+	background-color: #274380;
+}
+
+.conteneur h1 {
+	margin: 0;
+	padding-top: 7px;
+	padding-left: 20px;
+	color: white;
+	font-family: "Evolve-Med";
+}
+
+.contenu_droite {
+	float: right;
+}
+
+.contenu_droite ul {
+	margin: 0;
+	padding: 0;
+}
+
+.contenu_droite li {
+	list-style-type: none;
+	display: inline-block;
+	text-align: right;
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+.contenu_droite a {
+	display: block;
+	font-family: "Evolve-gros";
+	color: white;
+	text-decoration: none;
+	transition-property: transform;
+    transition-duration: 0.250s;
+    transition-timing-function: ease;
+
+	
+}
+.contenu_droite a:hover {
+    transform: translateY(-3px); /* On déplace l'objet */
+}
+
+p#spacer { 
+	clear: both; 
+	height: 1px; 
+}
+
+.bloc {
+	border: solid 2px #274380;
+	background-color: white;
+	margin: 30px auto;
+	width: 20%;
+	font-family: "Evolve-gros";
+	transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+	transform: translateY(20px); /* On déplace l'objet */}
+
+.bloc p {
+
+	font-size: 22px;
+	font-family: "Evolve-gros";
+}
+
+.bloc form {
+	margin: 50px auto;
+	width: 60%;
+
+}
+
+.bloc input {
+	width: 100%;
+	height: 25px;
+	border: solid 1px #274380;
+	border-radius: 5px;
+}
+
+
+.bloc input[type="submit"] {
+	font-family: "Evolve-gros";
+	width: 102%;
+	height: 30px;
+	display: inline-block;
+	border: none;
+	color: white;
+	background-color: #274380;
+	cursor: pointer;
+}
+
+#already {
+	font-size: 14px;
+}
+
+.erreur {
+	color: #721c24;
+	background-color: #f8d7da;
+	border: solid 1px #f5c6cb;
+	border-radius: .25em;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	font-size:12px;
+}
+
+.post {
+	color: #274380;
+	padding: 0;
+	margin: 50px auto;
+	width: 45%;
+	font-family: "Evolve-gros";
+}
+
+.post input[type='text'] {
+	width: 88.5%;
+	height: 20px;
+}
+
+.post input[type='submit'] {
+	width: 10%;
+	height: 26px;
+	display: inline-block;
+	border: none;
+	color: white;
+	background-color: #274380;
+	cursor: pointer;
+
+}
+
+.message {
+	margin: 40px auto;
+	width: 45%;
+	font-family: "Evolve-gros";
+	border: solid 1px #274380;
+	background-color: white;
+}
+
+.message p {
+	padding:5px 20px 5px 20px;
+}
+
+.reponse {
+	border: solid 1px #274380;
+	margin: 10px auto;
+	width: 90%;
+	text-align: justify;
+}
+
+.repondre input[type='text']{
+	width: 88.5%;
+	height: 30px;
+}
+
+.repondre input[type='submit']{
+	height: 35px;
+	width: 10%;
+	display: inline-block;
+	border: none;
+	color: white;
+	background-color: #274380;
+	cursor: pointer;
+}
+
+#rotate {
+	 transform: rotate(180deg);
+}
+
+.tabulation {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/* index.php */
+
+.title {
+	box-sizing: border-box;
+	margin: 100px auto;
+	width: 20%;
+	font-family: "Evolve-Med";
+	font-size: 35px;
+	color: #274380;
+	text-align: center;
+}
+
+.title h1 {
+	border-top: solid 5px #274380;
+	border-bottom: solid 5px #274380;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 15px;
+}
+
+.presentation {
+	font-family: "Evolve-Med";
+	margin: -100px auto;
+	width: 45%;
+	padding:5px 20px 5px 20px;
+	text-align: center;
+}
+
+.presentation h1 {
+	margin: 0;
+}
+
+.presentation h2 {
+	font-size: 20px;
+}
+
+#get_started {
+	display: inline-block;
+	background-color: #274380;
+	padding: 10px;
+	font-family: "Evolve-Med";
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	transition-property: background-color;
+    transition-duration: 0.5s;
+
+}
+
+#get_started:hover {
+	padding: 8px;
+	display: inline-block;
+	background-color: white;
+	font-family: "Evolve-Med";
+	text-decoration: none;
+	color: #274380;
+	border-radius: 5px;
+	border: solid 2px #274380;
+
+}
+
+/* amis.php */
+
+.amis {
+	color: #274380;
+	padding: 0;
+	margin: 50px auto -20px auto;
+	width: 45%;
+	font-family: "Evolve-gros";
+}
+
+.add_del {
+	margin: 40px auto;
+	width: 43%;
+	font-family: "Evolve-gros";
+	border: solid 1px #274380;
+	background-color: white;
+	padding:5px 20px 5px 20px;
+}
+
+.add_del h1 {
+	color: #274380;
+}
