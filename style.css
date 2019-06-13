@@ -17,6 +17,67 @@ body {
 
 }
 
+input {
+	font-family: "Evolve-Med";
+}
+
+.tabulation {
+	margin-left: 20px;
+}
+
+#already, #not_already {
+	font-size: 14px;
+}
+
+.erreur {
+	color: #721c24;
+	background-color: #f8d7da;
+	border: solid 1px #f5c6cb;
+	border-radius: .25em;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	font-size:12px;
+}
+
+.valide {
+	color: #155724;
+	background-color: #d4edda;
+	border: solid 1px #c3e6cb;
+	border-radius: .25em;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	font-size:12px;
+}
+
+.info {
+	color: #004085;
+	background-color: #cce5ff;
+	border: solid 1px #b8daff;
+	border-radius: .25em;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	font-size:12px;
+}
+
+.footer_index {
+	color: white;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #274380;
+	font-style: italic;
+	font-size: small;	
+	text-align: center;
+}
+
+/* menu.php */
+
 .conteneur {
 	height: 70px;
 	background-color: #274380;
@@ -45,7 +106,6 @@ body {
 	text-align: right;
 	margin-left: 20px;
 	margin-right: 20px;
-	
 }
 
 .contenu_droite a {
@@ -56,17 +116,26 @@ body {
 	transition-property: transform;
     transition-duration: 0.250s;
     transition-timing-function: ease;
-
-	
 }
+
 .contenu_droite a:hover {
     transform: translateY(-3px); /* On déplace l'objet */
+}
+
+.contenu_gauche a {
+	text-decoration: none;
 }
 
 p#spacer { 
 	clear: both; 
 	height: 1px; 
 }
+
+#rotate {
+	 transform: rotate(180deg);
+}
+
+/* timeline.php */
 
 .bloc {
 	border: solid 2px #274380;
@@ -110,37 +179,21 @@ p#spacer {
 	cursor: pointer;
 }
 
-#already {
-	font-size: 14px;
-}
-
-.erreur {
-	color: #721c24;
-	background-color: #f8d7da;
-	border: solid 1px #f5c6cb;
-	border-radius: .25em;
-	padding-left: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 10px;
-	font-size:12px;
-}
-
 .post {
 	color: #274380;
 	padding: 0;
 	margin: 50px auto;
-	width: 45%;
+	width: 750px;
 	font-family: "Evolve-gros";
 }
 
 .post input[type='text'] {
-	width: 88.5%;
+	width: 650px;
 	height: 20px;
 }
 
 .post input[type='submit'] {
-	width: 10%;
+	width: 80px;
 	height: 26px;
 	display: inline-block;
 	border: none;
@@ -151,8 +204,9 @@ p#spacer {
 }
 
 .message {
-	margin: 40px auto;
-	width: 45%;
+	word-wrap:break-word;
+	margin: 20px auto;
+	width: 750px;
 	font-family: "Evolve-gros";
 	border: solid 1px #274380;
 	background-color: white;
@@ -184,21 +238,14 @@ p#spacer {
 	cursor: pointer;
 }
 
-#rotate {
-	 transform: rotate(180deg);
-}
 
-.tabulation {
-	margin-left: 20px;
-	margin-right: 20px;
-}
 
 /* index.php */
 
 .title {
 	box-sizing: border-box;
 	margin: 100px auto;
-	width: 20%;
+	width: 350px;
 	font-family: "Evolve-Med";
 	font-size: 35px;
 	color: #274380;
@@ -259,14 +306,14 @@ p#spacer {
 .amis {
 	color: #274380;
 	padding: 0;
-	margin: 50px auto -20px auto;
+	margin: 50px auto 0 auto;
 	width: 45%;
 	font-family: "Evolve-gros";
 }
 
 .add_del {
-	margin: 40px auto;
-	width: 43%;
+	margin: 20px auto;
+	width: 710px;
 	font-family: "Evolve-gros";
 	border: solid 1px #274380;
 	background-color: white;
@@ -275,4 +322,54 @@ p#spacer {
 
 .add_del h1 {
 	color: #274380;
+}
+
+.add_del a {
+	margin-left: 15px;
+	font-family: "Evolve-Med";
+	font-size: 14px;
+	height: 20px;
+	padding: 10px 12px 7px 12px;
+	display: inline-block;
+	border: none;
+	color: white;
+	background-color: #274380;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.form_contact {
+	margin: 0 auto 40px auto;
+	width: 710px;
+	font-family: "Evolve-gros";
+	border: solid 1px #274380;
+	background-color: white;
+	padding:5px 20px 20px 20px;
+}
+
+.form_contact h1 {
+	color: #274380;
+}
+
+.form_contact input[type='submit'] {
+	margin: 5px auto;
+}
+
+.form_contact textarea {
+	font-family: "Evolve-Med";
+	width: 99.5%;
+	height: 70px;
+	resize: none;
+}
+
+.form_contact input[type='submit'] {
+	height: 35px;
+	width: 10%;
+	display: inline-block;
+	border: none;
+	color: white;
+	background-color: #274380;
+	cursor: pointer;
+	border-radius: 5px;
 }

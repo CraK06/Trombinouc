@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 11 juin 2019 à 22:48
+-- Généré le :  mer. 12 juin 2019 à 11:03
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -53,7 +53,14 @@ CREATE TABLE IF NOT EXISTS `publication` (
   `date_P` text,
   `time_P` text NOT NULL,
   PRIMARY KEY (`id_P`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `publication`
+--
+
+INSERT INTO `publication` (`id_P`, `_id`, `message_P`, `date_P`, `time_P`) VALUES
+(55, 1, 'bonjour', '12/06/19', '11:05:37');
 
 -- --------------------------------------------------------
 
@@ -71,14 +78,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mdp` varchar(255) NOT NULL,
   `amis` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `age`, `mail`, `mdp`, `amis`) VALUES
-(1, 'BOURDENET', 'Florian', 18, 'floflo805@gmail.com', '$2y$10$K7D.OdJG.xxkpfxJRylgLumBmdtLxiWPwSY9rZTrm0b6qnZqqjkKK', 1);
+(10, 'DARLET', 'Marc', 19, 'marc.darlet@gmail.com', '$2y$10$hpS06vWJpROyPXx8.EZtpesNxs388qZVUSY7js.wLr51GdPYlnIru', 1),
+(1, 'BOURDENET', 'Florian', 18, 'florian.bourdenet@gmail.com', '$2y$10$K7D.OdJG.xxkpfxJRylgLumBmdtLxiWPwSY9rZTrm0b6qnZqqjkKK', 1),
+(11, 'LUCZAK', 'Alexis', 18, 'alexis.luczak@gmail.com', '$2y$10$SwZrD7icBaTnvjzMg5f6Zu5iqAfZiEA37WBEVrOb1KJyo2QIqqu3y', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

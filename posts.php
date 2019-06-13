@@ -16,4 +16,5 @@ session_start();
 	}
 
 	header("Location: timeline.php");
+	exit();
 ?>

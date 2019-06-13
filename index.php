@@ -5,7 +5,7 @@
 		<script src="https://kit.fontawesome.com/cbe705ba66.js"></script>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<title></title>
+		<title>Accueil</title>
 	</head>
 	<body>
 		<?php include 'menu.php'; ?>
@@ -18,5 +18,8 @@
 				<a href="inscription.php" id="get_started">Démarrer</a>
 			</div>
 		</section>
+		<footer class="footer_index">
+ 			 <p>&copy Florian BOURDENET</p>
+		</footer> 
 	</body>
 </html>

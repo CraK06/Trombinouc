@@ -3,29 +3,46 @@ session_start();
 	include 'bdd.php';
 
 	if (isset($_POST['submit'])) {
-		if (strlen($_POST['nom']) < 255 OR strlen($_POST['prenom']) < 255) {
-			if (strcmp($_POST['mdp'], $_POST['mdp2']) == 0) {
-				$reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
-                $reqmail->execute(array($mail));
-                $mailexiste = $reqmail->rowCount();
-				if ($mailexiste == 0) {
-					$crypted = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-					$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, age, mail, mdp) VALUES(:nom, :prenom, :age, :mail, :mdp)');
-					$marqueurs = array('nom'=>$_POST['nom'],'prenom'=>$_POST['prenom'],'age'=>$_POST['age'],'mail'=>$_POST['mail'],'mdp'=>$crypted);
-					$query->execute($marqueurs);
-					$query->closeCursor();
-					header('Location: connexion.php');
+
+		$nom = strtoupper(htmlspecialchars($_POST['nom']));
+		$prenom = ucfirst(htmlspecialchars($_POST['prenom']));
+		$age = htmlspecialchars($_POST['age']);
+		$mail = htmlspecialchars($_POST['mail']);
+		$mdp = htmlspecialchars($_POST['mdp']);
+		$mdp2 = htmlspecialchars($_POST['mdp2']);
+
+		if (strlen($nom) < 30 OR strlen($prenom) < 30) {
+			if (strcmp($mdp, $mdp2) == 0) {
+					$reqnom = $bdd->prepare("SELECT * FROM utilisateur WHERE nom = :nom AND prenom = :prenom");
+	                $reqnom->execute(array('nom'=>$nom,'prenom'=>$prenom));
+	                $nomexiste = $reqnom->rowCount();
+				if ($nomexiste == 0) {
+					$reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = :mail");
+	                $reqmail->execute(array('mail' => $mail));
+	                $mailexiste = $reqmail->rowCount();
+					if ($mailexiste == 0) {
+						$crypted = password_hash($mdp, PASSWORD_DEFAULT);
+						$query = $bdd->prepare('INSERT INTO utilisateur(nom, prenom, age, mail, mdp) VALUES(:nom, :prenom, :age, :mail, :mdp)');
+						$marqueurs = array('nom'=>$nom,'prenom'=>$prenom,'age'=>$age,'mail'=>$mail,'mdp'=>$crypted);
+						$query->execute($marqueurs);
+						$query->closeCursor();
+						header('Location: connexion.php');
+						exit();
+					}
+					else {
+						$erreur = "Cette adresse mail est déjà utilisée.";
+					}
 				}
 				else {
-					$erreur = "Cette adresse mail est déjà utilisée.";
-				}
+					$erreur = "Cette combinaison nom/prénom est déjà utilisée.";
+				}	
 			}
 			else {
 				$erreur = "Les deux mots de passe ne sont pas identiques.";
 			}
 		}
 		else {
-			$erreur = "Le nom et le prénom doivent être inférieurs à 255 caractères.";
+			$erreur = "Le nom et le prénom doivent être inférieurs à 30 caractères.";
 		}
 	}
 
@@ -37,7 +54,7 @@ session_start();
 		<script src="https://kit.fontawesome.com/cbe705ba66.js"></script>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<title></title>
+		<title>Inscription</title>
 	</head>
 	<body>
 		<?php include 'menu.php'; ?>

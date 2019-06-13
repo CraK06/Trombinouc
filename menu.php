@@ -3,7 +3,7 @@
 if (isset($_SESSION['user']) AND isset($_SESSION['admin']) AND $_SESSION['admin'] == TRUE AND $_SESSION['user'] == TRUE) {
 	echo 	'<div class="conteneur">
 				<div class="contenu_gauche">
-					<h1>Trombinouc</h1>
+					<a href="index.php"><h1>Trombinouc</h1></a>
 				</div>
 				
 				<div class="contenu_droite">
@@ -30,7 +30,7 @@ if (isset($_SESSION['user']) AND isset($_SESSION['admin']) AND $_SESSION['admin'
 elseif (isset($_SESSION['user']) AND $_SESSION['user'] == TRUE) {
 	echo 	'<div class="conteneur">
 				<div class="contenu_gauche">
-					<h1>Trombinouc</h1>
+					<a href="index.php"><h1>Trombinouc</h1></a>
 				</div>
 				
 				<div class="contenu_droite">
@@ -54,20 +54,20 @@ elseif (isset($_SESSION['user']) AND $_SESSION['user'] == TRUE) {
 else {
 	echo 	'<div class="conteneur">
 				<div class="contenu_gauche">
-					<h1>Trombinouc</h1>
+					<a href="index.php"><h1>Trombinouc</h1></a>
 				</div>
 				
 				<div class="contenu_droite">
 					<nav>
 						<ul>
 							<li>
-								<a href="index.php" id="hover1"><i class="fas fa-star"></i> Accueil</a>
+								<a href="index.php"><i class="fas fa-star"></i> Accueil</a>
 							</li>
 							<li>
-								<a href="timeline.php" id="hover2"><i class="far fa-newspaper"></i> Actualités</a>
+								<a href="timeline.php"><i class="far fa-newspaper"></i> Actualités</a>
 							</li>
 							<li>
-								<a href="Connexion.php" id="hover3"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+								<a href="connexion.php"><i class="fas fa-sign-in-alt"></i> Connexion</a>
 							</li>
 						</ul>
 					</nav>
